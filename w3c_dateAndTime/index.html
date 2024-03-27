@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Current date and time </h2>
+    <button type="button" onclick="document.getElementById('demo').innerHTML = Date()"> Click me to display date and time.</button>
+    <p id="demo"/>
+
+    <h2> Date</h2>
+    <p>Javascript <b><u>current</u></b> date</p>
+    <p id ="demo1"/>
+    
+    <h2> Managing dates </h2>
+    <p id ="demo2"/>
+
+   <h3> The month calculated based on index [0], means Jan=0, Feb=1.....Nov=10, Dec=11</h3>
+    <p id ="demo3"/>
+    <h3>Date calculated as normal</h3>
+    <p id ="demo4"/>
+    <h3>Day calculated as normal</h3>
+    <p id ="demo5"/>
+    <p id ="demo6"/>
+    
+</body>
+<script>
+let myDate = new Date();
+document.getElementById('demo1').innerHTML = ("This is current date and time :" + myDate);
+
+let otherDate = new Date ('1976-12-15T13:10:07');
+document.getElementById('demo2').innerHTML = ("This is other date and time :" + otherDate);
+
+let month = otherDate.getMonth();
+document.getElementById('demo3').innerHTML = ("Get month function returing :" + month + " , means December");
+
+let date = otherDate.getDate();
+document.getElementById('demo4').innerHTML = ("Get date function returing :" + date);
+
+let day =otherDate.getDay();
+document.getElementById('demo5').innerHTML = ("Get day function returing :" + day + " Wed is the 3rd day of the week");
+let hour = otherDate.getHours();
+let milSec = otherDate.getMilliseconds();
+document.getElementById('demo6').innerHTML = ("Get mil_sec function returing :" + milSec );
+let year = otherDate.getFullYear();
+
+
+</script>
+</html>

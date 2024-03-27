@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Logical operators </h1>
+    <h2> 1- Logical end && --> it returns true when both conditions are true</h2>
+    <p>Where a = 10, b = 15, c = 20 and d = 25. </p>
+    <p id ="demo"/>
+    <p id ="demo1"/>
+
+    <h2> 2- Logical or || --> it returns true when any one condition is true</h2>
+    <p> Here we are getting one of the condition true, so it is returing true. </p>
+    <p id ="demo2"/>
+
+    <h2> 3- Logical not ! --> it returns true when the condition is false else it will return false</h2>
+    <p> Here we are validating a condition a = 10 is NOT greater than b = 15. This condition is false so it is returing true. </p>
+    <p id ="demo3"/>
+    <p> Here we are validating a condition a = 10 is NOT less than b = 15. This condition is ture so it is returing false. </p>
+    <p id ="demo4"/>
+</body>
+<script>
+    let a = 10, b = 15, c = 20, d = 25;
+    let result = ((a < b) && (c < d));
+    document.getElementById("demo").innerHTML = ("Result of ((a < b) && (c < d)) returns : " + result);
+
+    let result1 = ((a > b) && (c < d));
+    document.getElementById("demo1").innerHTML = ("Result of ((a > b) && (c < d)) returns : " + result1);
+    
+    let result2 = ((a > b) || (c < d));
+    document.getElementById("demo2").innerHTML = ("Result of ((a > b) || (c < d)) returns : " + result2);
+    
+    let result3 = (!(a > b));
+    document.getElementById("demo3").innerHTML = ("Result of !(a > b) returns : " + result3);
+
+    let result4 = (!(a < b));
+    document.getElementById("demo4").innerHTML = ("Result of !(a < b) returns : " + result4);
+</script>
+</html>

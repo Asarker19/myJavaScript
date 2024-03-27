@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h1>>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color:blue">String Search</h1>
+    <h2 style="color:blueviolet">1- String indexOf() </h2>
+    <p1>
+        <li style="color:cadetblue">The indexOf() method returns the index (position) the first occurrence of a string
+            in a string: <br>
+            JavaScript counts positions from zero.
+        </li>
+        <p id="demoText" />
+        <p id="demoIdOf" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">2- String lastIndexOf()</h2>
+    <p1>
+        <li style="color:cadetblue">The lastIndexOf() method returns the index of the last occurrence of a specified
+            text in a string:</li>
+        <p id="demoLastIdOf" />
+        <li style="color:red"> Both indexOf(), and lastIndexOf() return -1 if the text is not found:</li>
+        <p id="demoLastIdOf1" />
+        <li style="color:red"> Both methods accept a second parameter as the starting position for the search:<br>
+            The lastIndexOf() methods searches backwards (from the end to the beginning), <br>
+            meaning: if the second parameter is 15, the search starts at position 15, and searches to the beginning of
+            the string.
+        </li>
+        <p id="demoLastIdOf2" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">3- String search()</h2>
+    <p1>
+        <li style="color:cadetblue"> The search() method searches a string for a string (or a regular expression) and
+            returns the position of the match:
+        </li>
+        <p id="demoStrSerc1" />
+        <p id="demoStrSerc2" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">4- String match()</h2>
+    <p1>
+        <li style="color:cadetblue">The match() method returns an array containing the results of matching a string
+            against a string (or a regular expression).
+        </li>
+        <p id="demoStrMatch" />
+        <p id="demoStrMatch1" />
+        <p id="demoStrMatch2" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">5-String matchAll()</h2>
+    <p1>
+        <li style="color:cadetblue">The matchAll() method returns an iterator containing the results of matching a
+            string against a string (or a regular expression).<br>
+            matchAll() does not work in Internet Explorer.
+        </li>
+        <p id="demoMatchAll" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">6- String includes()</h2>
+    <p1>
+        <li style="color:cadetblue">The includes() method returns true if a string contains a specified value.<br>
+            Otherwise it returns false.<br>
+            The includes() method is not supported in Internet Explorer.
+        </li>
+        <p id="demoStrIncl" />
+        <p id="demoStrInc2" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">8- String startsWith()</h2>
+    <li style="color:cadetblue">
+        The startsWith() method is not supported in Internet Explorer.
+    </li>
+    <!-- XX -->
+    <h2 style="color:blueviolet">9- String endsWith()</h2>
+    <li style="color:cadetblue">
+        The startsWith() method is not supported in Internet Explorer.
+    </li>
+    <!-- XX XX-->
+    <h1 style="color:blue">String Template Literals</h1>
+    <h3> Also known as Template Literals, Template Strings, String Templates, Back-Tics Syntax </h3>
+    <h3>Back-Tics Syntax: use back-ticks (``) rather than the quotes ("") to define a string: </h3>
+    <h3>With template literals, you can use both single and double quotes inside a string: let text = `He's often called
+        "Johnny"`;</h3>
+    <p1 id="demoMultiLine"></p1>
+
+    <h2 style="color:blueviolet">Variable Substitutions</h2>
+    <p1>
+        <li style="color:cadetblue">Template literals allow variables in strings: <br>
+            Automatic replacing of variables with real values is called string interpolation.</li>
+        <li style="color:red">Template literals are not supported in Internet Explorer.</li>
+        <p id="demoVarSub" />
+    </p1>
+
+    <h2 style="color:blueviolet">Expression Substitution</h2>
+    <p1>
+        <li style="color:cadetblue">Template literals allow expressions in strings:</li>
+        <li style="color:red">Template literals are not supported in Internet Explorer.</li>
+        <p id="demoExpSub" />
+    </p1>
+</body>
+<script>
+    //***************************************************************
+    //String Search
+    //***************************************************************
+    //String indexOf()
+    let text = "Please locate where 'locate' occurs!";
+    let index = text.indexOf("locate");
+    document.getElementById("demoText").innerHTML = "The String: " + text;
+    document.getElementById("demoIdOf").innerHTML = "The position of the first occurrence of \"locate\" is:" + index;
+
+    //String lastIndexOf() 
+    let indexLast = text.lastIndexOf("locate");
+    let indexLastExt = text.indexOf("locate", 15);
+    document.getElementById("demoLastIdOf").innerHTML = "The position of the last occurrence of \"locate\" is: " + indexLast;
+    document.getElementById("demoLastIdOf1").innerHTML = "When the text is not found it returns : " + text.lastIndexOf("John");
+    document.getElementById("demoLastIdOf2").innerHTML = "Example of indexOf() taking secnd parameter : " + indexLastExt;
+
+    //String search()
+    //let strSearchResult = text.search("locate"); 
+    // same result with the reg expression 
+    let strSearchResult = text.search(/locate/);
+    document.getElementById("demoStrSerc1").innerHTML = "It returns the index position of \"locate\" as : " + strSearchResult;
+
+    // String match() -<p id="demoStrMatch"/>
+    let matchText = "The rain in SPAIN stays mainly in the plain";
+    //const myMatchArr = matchText.match("ain");
+    // Now with ragular expression
+    const myMatchArr = matchText.match(/ain/);
+    // Now  global search
+    const myMatchGArr = matchText.match(/ain/g);
+    //case-insensitive global search for "ain":
+    const myMatchGlbCaseSensArr = matchText.match(/ain/gi);
+    document.getElementById("demoStrMatch").innerHTML = "Perform a search for \"ain\" in the string " + "\"" + matchText + "\"" + ". Array langth returns : " + myMatchArr.length + " and Array return first matched string: " + myMatchArr;
+    document.getElementById("demoStrMatch1").innerHTML = "Global serach using regular expression, returned:  " + myMatchGArr;
+    document.getElementById("demoStrMatch2").innerHTML = "Global serach case sensetive using regular expression, returned:  " + myMatchGlbCaseSensArr;
+
+    // String matchAll() demoMatchAll
+    let matchAllText = "I love cats. Cats are very easy to love. Cats are very popular.";
+    const iterator = matchAllText.matchAll("Cats");
+    //const iterator = matchAllText.matchAll(/Cats/g);
+    //const iterator = matchAllText.matchAll(/Cats/gi);
+    document.getElementById("demoMatchAll").innerHTML = Array.from(iterator);
+
+    // String includes() demoStrIncl
+    let strInclText = "Hello world, welcome to the universe.";
+    let strInclTextResult = strInclText.includes("world");
+    let strInclTextResult1 = strInclText.includes("world", 12);
+    document.getElementById("demoStrIncl").innerHTML = "Check \"" + strInclText + "\" " + "if a string includes \"world\": " + strInclTextResult;
+    document.getElementById("demoStrInc2").innerHTML = "Check \"" + strInclText + "\" " + "if a string includes \"world\" and Start at position 12 : " + strInclTextResult1;
+    // String startsWith()
+    // String endsWith()
+
+    //***************************************************************
+    //String Template Literals 
+    //***************************************************************
+    //Multiline Strings
+    let multiLineText =
+        `The quick
+        brown fox
+        jumps over
+        the lazy dog`;
+    document.getElementById("demoMultiLine").innerHTML = "Multi line string:  " + multiLineText;
+
+    // Variable Substitutions 
+    let firstName = "John";
+    let lastName = "Doe";
+    let varSubText = `Welcome ${firstName} ${lastName} !`;
+    document.getElementById("demoVarSub").innerHTML = "Template literals allows variables in strings: " + varSubText;
+
+    // Expression Substitution
+    let price = 10;
+    let VAT = 0.25;
+    let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+    document.getElementById("demoExpSub").innerHTML = total;
+</script>
+
+</html>

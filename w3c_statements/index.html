@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Statements</title>
+</head>
+<h2>JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.</h2>
+<h3>The statements are executed, one by one, in the same order as they are written.</h3>
+<body>
+    <p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+    <p id="demo"></p>
+    <h3>JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.</h3>
+    <h3>Line Length: avoid code lines longer than 80 characters.</h3>
+    <h3>Line Breaks: the best place to break it is after an operator</h3>
+    <li> Example: <br>
+        document.getElementById("demo").innerHTML = <br>
+        "Hello Dolly!";
+    </li>
+    <h3> Code Block</h3>
+    <li>JavaScript statements can be grouped together in code blocks, inside curly brackets {...}.</li>
+    <li>The purpose of code blocks is to define statements to be executed together.</li>
+    
+</body>
+<script>
+    let x, y, z;  // Statement 1
+    x = 5;        // Statement 2
+    y = 6;        // Statement 3
+    z = x + y;    // Statement 4
+    
+    document.getElementById("demo").innerHTML =
+    "Example: The value of z is " + z + ".";  
+    </script>
+</html>

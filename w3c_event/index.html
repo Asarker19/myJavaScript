@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<h1> >, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="color:rgb(64, 0, 255);">JavaScript Events</h1>
+    <p><b>Note:</b>
+        <li>1- HTML events are "things" that happen to HTML elements.</li>
+        <li>2- When JavaScript is used in HTML pages, JavaScript can "react" on these events.</li>
+        <li>3- JavaScript lets you execute code when events are detected.</li>
+        <li>4- HTML allows event handler attributes, with JavaScript code, to be added to HTML elements.</li>
+        <li>Syntax: Event Handler -- element event='some JavaScript' -- or inside double quote. </li>
+
+    <h2 style="color:red;"> <u>*Type: JavaScript HTML Events</u></h2>
+    <li>Common HTML Events<br>
+        1] onchange --> An HTML element has been changed <br>
+        2] onclick --> The user clicks an HTML element <br>
+        3] onmouseover --> The user moves the mouse over an HTML element <br>
+        4] etc................... <br>
+    </li>
+    <h3> Example 1: On Click attribute added to a button 'The time is?' html element: </h3>
+    <li>The JavaScript code changes the content of the element with id="onClickTime".</li>
+    <button onclick="document.getElementById('onClickTime').innerHTML=Date()">The time is?</button>
+    <p id='onClickTime'></p>
+    <h3> Example 2: the code changes the content of its own element (using this.innerHTML): </h3>
+    <button onclick="displayDate()">The time function created with this.innerHTML</button>
+
+    <h3>Example 3: Event attributes calling functions directly:</h3>
+    <button onclick="displayDate()">The Time button created with displayDate function.</button>
+    <p id="displayDateF" />
+
+    <h2 style="color:red;"><u>Type: JavaScript Event Handlers</u></h2>
+    <p>* Things that should be done every time a page loads<br>
+        * Things that should be done when the page is closed<br>
+        * Action that should be performed when a user clicks a button<br>
+        * Content that should be verified when a user inputs data<br></p>
+    </p>
+    <button onclick="alert('You are done.')">The Event chapter is done</button>
+
+</body>
+<script>
+    function displayDate() {
+        document.getElementById("displayDateF").innerHTML = Date();
+    }
+</script>
+
+</html>

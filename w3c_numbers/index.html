@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Numbers</title>
+</head>
+
+<body>
+    <h1 style="color:blue">JavaScript Numbers</h1>
+    <h3>JavaScript has only one type of number. Numbers can be written with or without decimals.</h3>
+
+    <!-- XX-->
+    <h2 style="color:blueviolet">scientific (exponent) notation</h2>
+    <h3>Extra large or extra small numbers can be written with scientific (exponent) notation:</h3>
+    <p1>
+        <li style="color:cadetblue"></li>
+        <p id="sciExp" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">Adding Numbers and Strings</h2>
+    <h3>JavaScript uses the + operator for both addition and concatenation..<br>
+        Numbers are added. Strings are concatenated.</h3>
+    <p1>
+        <li style="color:cadetblue">If you add two numbers, the result will be a number <br>
+            If you add two strings, the result will be a string concatenation<br>
+            If you add a number and a string, the result will be a string concatenation:</li>
+        <p id="addTwoStr" />
+        <p id="commMistake" />
+        <p id="commMistake1" />
+    </p1>
+    <!-- XX -->
+    <h2 style="color:blueviolet">NaN - Not a Number</h2>
+    <p1>
+        <li style="color:cadetblue">NaN is a JavaScript reserved word indicating that a number is not a legal number.
+            <br>
+            Trying to do arithmetic with a non-numeric string will result in NaN (Not a Number):</li>
+            <p id="nANDemo">
+    </p1>
+
+</body>
+<script>
+    // scientific (exponent) notation
+    let x = 123e5;
+    let y = 123e-5;
+    document.getElementById("sciExp").innerHTML = "x = 123e5 returns: " + x + "<br>" + "y = 123e-5 returns: " + y;
+
+    // Adding two String addTwoStr
+    let a = "10";
+    let b = "20";
+    let c = a + b;
+    document.getElementById("addTwoStr").innerHTML = "Adding two string (\"10\" + \"20\"): " + c;
+
+    // Common mistake commMistake
+    let num1 = 10;
+    let num2 = 20;
+    let totalResult = (num1 + num2);
+    document.getElementById("commMistake").innerHTML = "The result of " + num1 + " + " + num2 + " is not 30 but : " + num1 + num2;
+    document.getElementById("commMistake1").innerHTML = "The result of sum of 10 and 20 in (10+20) will return: " + totalResult;
+
+// Not a number - NaN nANDemo
+let num3 = 100/"Apple";
+document.getElementById("nANDemo").innerHTML = "Trying 100\\ \"Apple\" result: "+ "Nan is a type of " + typeof num3 + " Result:  " +num3;
+
+</script>
+
+</html>

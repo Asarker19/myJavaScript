@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript Arrays</h1>
+    <h2>1- The length Property</h2>
+    <p id ="allElements"/>
+    <p id="length"/>
+
+    <h2>2- Array toString function</h2>
+    <h3>The JavaScript method toString() converts an array to a string of (comma separated) array values.</h3>
+    <p id="toString"/>
+    <p id ="frtArraytoString"/>
+
+    <h2>3- Array join() function</h2>
+    <h3>The join() method joins all array elements into a string, can specify the separator *, / etc. </h3>
+    <p id ="arrayJoin"/>
+    
+    <h2>4- Remove elements from Array - Popping</h2>
+    <h3>The pop() method removes the **last element** from an array:</h3>
+    <p id ="allElementsBeforePop"/>
+    <p id ="arrayPop"/>
+    <p id ="allElementsAfterPop"/>
+
+    <h2>5- Adding elements to Array - Pusing</h2>
+    <h3>The push() method adds a new element to an array (at the end):</h3>
+    <p id ="allElementsBeforePush"/>
+    <p id ="arrayPush"/>
+    <p id ="allElementsAfterPush"/>
+<h2 style="color: brown;">******************************************Advance Array********************************************************************</h2>
+ <h2> THis is for advance Array</h2>
+ <h3>We are creating an empty array and later we are assigning the values/h3>
+    <p id = "emptyArry"/>
+    <p id="emptyArry1"/>
+    <p id="emptyArry2"/>
+</body>
+<!-- <script src="w3c_array\array.js" ></script> -->
+<script>
+    // Option one-- create Array
+    const fruits = ["Banana", "Orange", "Apple", "Mango"];
+    
+    let size = fruits.length;
+    document.getElementById("length").innerHTML=("We are using length operator to calculte the fruits arry size: " + size);
+    document.getElementById("allElements").innerHTML= fruits;
+
+    let frtArraytoString = fruits.toString();
+    document.getElementById("frtArraytoString").innerHTML=("We are converting Array to String using toString : " + frtArraytoString);
+
+    let frtJoinString = fruits.join(" */ ");
+    document.getElementById("arrayJoin").innerHTML=("We are joining array and separating them by symbol ' */ ' :  " + frtJoinString);
+    
+    document.getElementById("allElementsBeforePop").innerHTML=("Before the pop function all the array element : " + fruits);
+    let frtPopElement = fruits.pop();
+    document.getElementById("arrayPop").innerHTML=("After the pop function, it will remove the last array element : " + frtPopElement);
+    document.getElementById("allElementsAfterPop").innerHTML=("After the pop function, current array elements : " + fruits);
+
+    document.getElementById("allElementsBeforePush").innerHTML=("Before the push function, all the array element : " + fruits);
+    let frtPushElement = fruits.push('Kiwi', 'Tomato');
+    document.getElementById("arrayPush").innerHTML=("After the push function, it will add 2 elements at the last element : " + frtPushElement);
+    document.getElementById("allElementsAfterPush").innerHTML=("After the push function, current array elements : " + fruits);
+    
+// Option two: create array
+const cars = [];
+cars[0]="Saab";
+cars[1]="Volvo";
+cars[2]="BMW";
+console.log(cars);
+document.getElementById("emptyArry").innerHTML= cars;
+console.log("Array typeOf returns : " + typeof cars);
+
+// Accessing array using for loop
+for(i = 0; i < fruits.length; i ++){
+    console.log(i);
+    console.log(fruits[i]);
+}
+console.log("Fruits finish line.....................................")
+function myArrayFunc(value){
+    console.log(value);
+}
+cars.forEach(myArrayFunc);
+console.log("Car finish line.....................................")
+
+</script>
+</html>

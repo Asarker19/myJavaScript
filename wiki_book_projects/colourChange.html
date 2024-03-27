@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The button will change the background colour.</title>
+    <script>
+        function makeGreen(){
+            document.getElementById("mainPart").style.background="#99ccff";
+            document.getElementById("greenButton").style.background="#ccffff";
+        }
+        function makeBlue(){
+            document.getElementById("mainPart").style.background="#ccffcc";
+            document.getElementById("blueButton").style.background="#00cc00";
+        }
+        function returnToWhite(){
+            document.getElementById("mainPart").style.background="white";
+            document.getElementById("whiteButton").style.background="#ffffcc";
+        }
+        let x, y =1; 
+    </script>
+</head>
+<body id="mainPart">
+    <h1> Background change</h1>
+    <button type="button" onclick="makeGreen()" id="greenButton">GREEN</button>
+    <button type="button" onclick="makeBlue()" id="blueButton">BLUE</button>
+    <button type="button" onclick="returnToWhite()" id="whiteButton">Return to White</button>
+    <script src="self_test.js"></script>
+</body>
+</html>

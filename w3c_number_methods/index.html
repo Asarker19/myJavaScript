@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Number Methods</title>
+    <h1 style="color:blue"> JavaScript Number Methods</h1>
+</head>
+
+<body>
+    <h2 style="color:blueviolet">1- toString(): Returns a number as a string </h2>
+    <div>
+        <p1>
+            <li style="color:cadetblue">All number methods can be used on any type of numbers (literals, variables, or
+                expressions):</li>
+            <p id="demoToStr" />
+            <p id="demoToStr1" />
+            <p id="demoToStr2" />
+        </p1>
+    </div>
+    <!--XX-->
+    <h2 style="color:blueviolet">2- toExponential(): Returns a number written in exponential notation</h2>
+    <p1>
+        <li style="color:cadetblue"> toExponential() returns a string, with a number rounded and written using
+            exponential notation.<br>
+            A parameter defines the number of characters behind the decimal point:
+        </li>
+        <p id="demoToExponential0" />
+        <p id="demoToExponential" />
+        <p id="demoToExponential1" />
+        <p id="demoToExponential2" />
+    </p1>
+    <!--XX-->
+    <h2 style="color:blueviolet">3- toFixed(): Returns a number written with a number of decimals</h2>
+    <p1>
+        <li style="color:cadetblue">toFixed(2) is perfect for working with money.
+        </li>
+        <p id="demoToFixed" />
+        <p id="demoToFixed1" />
+        <p id="demoToFixed2" />
+        <p id="demoToFixed3" />
+    </p1>
+    <!--XX-->
+    <h2 style="color:blueviolet">4- toPrecision(): Returns a number written with a specified length</h2>
+    <p1>
+        <li style="color:cadetblue"> Same as toFixed()
+        </li>
+    </p1>
+    <!--XX-->
+    <h2 style="color:blueviolet">5- ValueOf(): Returns a number as a number</h2>
+    <p1>
+        <li style="color:cadetblue"> **The valueOf() method is used internally in JavaScript to convert Number objects
+            to primitive values. <br>
+            ** In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+        </li>
+    </p1>
+    <li> </li>
+    <!--XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+    <h1>***********Converting Variables to Numbers*************</h1>
+    <h3>There are 3 JavaScript methods that can be used to convert a variable to a number:</h3>
+    <h4 style="color: red;">The methods are not number methods. They are global JavaScript methods.</h4>
+    <!--XX-->
+    <h2 style="color:blueviolet">1- Number(): Returns a number converted from its argument.</h2>
+    <p id="demoNum">
+        <!--XX-->
+    <h2 style="color:blue">1.1 - The Number() Method Used on Dates</h2>
+    <li>it calculate milliseconds between 1970-01-02 and 1970-01-01. </li>
+    <p id="demoNumDate">
+        <!--XX-->
+    <h2 style="color:blueviolet">2- parseFloat(): Parses its argument and returns a floating point number.</h2>
+    <p1>
+        <li style="color:cadetblue">
+        </li>
+    </p1>
+    <!--XX-->
+    <h2 style="color:blueviolet">3- parseInt(): Parses its argument and returns a whole number.</h2>
+    <p1>
+        <li style="color:cadetblue">
+        </li>
+    </p1>
+</body>
+<script>
+    //toString()
+    let num = 123;
+    let numToStringLiteral = num.toString();
+    let myToStringVariable = (123).toString();
+    let myToStringExpression = (100 + 23).toString();
+    document.getElementById("demoToStr").innerHTML = "Result of 123 literals to toString()  :" + numToStringLiteral;
+    document.getElementById("demoToStr1").innerHTML = "Result of (123) Variable to toString()  :" + myToStringVariable;
+    document.getElementById("demoToStr2").innerHTML = "Result of (100+23) expressions to toString()  :" + myToStringExpression;
+
+    //toExponential()  demoToExponential
+    let exponNum = 9.656;
+    document.getElementById("demoToExponential0").innerHTML = "To Exponential : " + exponNum.toExponential();
+    document.getElementById("demoToExponential").innerHTML = "To Exponential with 2 decimal : " + exponNum.toExponential(2);
+    document.getElementById("demoToExponential1").innerHTML = "To Exponential with 4 decimal : " + exponNum.toExponential(4);
+    document.getElementById("demoToExponential2").innerHTML = "To Exponential with 6 decimal : " + exponNum.toExponential(6);
+
+    //toFixed() "demoToFixed"
+    let myToFix = 9.656;
+    document.getElementById("demoToFixed").innerHTML = "9.656 result after toFixed(): " + myToFix.toFixed();
+    document.getElementById("demoToFixed1").innerHTML = "To Fixed with 2 decimal : " + myToFix.toFixed(2);
+    document.getElementById("demoToFixed2").innerHTML = "To Fixed with 4 decimal : " + myToFix.toFixed(4);
+    document.getElementById("demoToFixed3").innerHTML = "To Fixed with 4 decimal : " + myToFix.toFixed(6);
+
+    //Global Methods Number()  "demoNum"
+    document.getElementById("demoNum").innerHTML =
+        "When Number(true), it returned: " + Number(true) + "<br>" +
+        "When Number(false), it returned: " + Number(false) + "<br>" +
+        "When Number(\"10\") String- it returned: " + Number("10") + "<br>" +
+        "When Number(\" 10\") String- it returned: " + Number(" 10") + "<br>" +
+        "When Number(\"10 \") String- it returned: " + Number("10 ") + "<br>" +
+        "When Number(\"10.33\") String- it returned: " + Number("10.33") + "<br>" +
+        "When Number(\"10,33 \") String- it returned: " + Number("10,33") + "<br>" +
+        "When Number(\"10 33\") String- it returned: " + Number("10 33") + "<br>" +
+        "When Number(\"John\") String- it returned: " + Number("John");
+
+    //The Number() Method Used on Dates demoNumDate
+    let dateNumb = new Date("1970-01-02");
+    document.getElementById("demoNumDate").innerHTML = "Converting 1970-01-02 to number: " + Number(dateNumb);
+
+
+
+</script>
+
+</html>

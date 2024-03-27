@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Function</h1>
+    <h2>A sample function which performs a calculation and returns the result:</h2>
+    <p id="sampleFunc"/>
+    <h2>1- Using a function as a variable:</h2>
+    <p id="funcAsVariable"/>
+    <h3>Inside the variable text we are calling the toCelsius functions </h3>
+    <h2>2- Local variable:</h2>
+    <p>Outside myFunction() carName is undefined.</p>
+    <p id="localVar1"/>
+    <p id="localVar2"/>
+
+    <h2>Treat function as variable</h2>
+    <p id="funcAsVar1"></p>
+   
+</body>
+<script>
+function sampleFunction(p1, p2){
+return p1*p2
+}
+let result = sampleFunction(4, 5);
+document.getElementById("sampleFunc").innerHTML = ("The result of p1 = 4 and p =5 is " + result);
+
+// 1- Using a function as a variable
+function toCelsius(fahrenheit) {
+  return (5/9) * (fahrenheit-32);
+} 
+let text = "The temperature is " + toCelsius(77) + " Celsius.";
+document.getElementById("funcAsVariable").innerHTML = text;
+
+//Local variable only can be used inside the function 
+let localVar = "Outside: " + typeof carName;
+document.getElementById("localVar1").innerHTML = localVar;
+
+function funcLocalVar() {
+  let carName = "Volvo";
+  let localVar = "Inside: " + typeof carName + " " + carName; 
+  document.getElementById("localVar2").innerHTML = localVar;
+}
+funcLocalVar(); 
+
+function myFuncAsVariable(){
+  alert("A function can be treated as Variable !")
+}
+myFuncAsVariable.prototype = "Hi";
+// test A variable assigned the function and it will return same 
+const test2 = myFuncAsVariable;
+console.log(test2 === myFuncAsVariable);
+console.dir(myFuncAsVariable);
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Sorting Arrays </title>
+    <h1>JavaScript Sorting Arrays</h1>
+</head>
+
+<body>
+    <h1 style="color: blue;"> Type: 1 Alpabetic Sort</h1>
+    <h2>1- Array sort() function</h2>
+    <div>
+        <h3 style="color: blueviolet;">The sort() method sorts an array alphabetically:</h3>
+        <p id="a1" />
+    </div>
+    <script>
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        let constFrut = fruits.sort();
+        document.getElementById("a1").innerHTML = "Berfore sorting array = [\"Banana\", \"Orange\", \"Apple\", \"Mango\"], after sorting Array:  " + constFrut;            
+    </script>
+
+    <h2>2- Array reverse() function</h2>
+    <div>
+        <h3 style="color: blueviolet;">The reverse() method reverses the elements in an array.</h3>
+        <li style="color: red;">By combining sort() and reverse() you can sort an array in descending order:</li>
+        <p id="b1" />
+        <p id="b2" />
+    </div>
+    <script>
+        const fruitsRev = ["Banana", "Orange", "Apple", "Mango"];
+        document.getElementById("b2").innerHTML = "Berfore reverse() array = [\"Banana\", \"Orange\", \"Apple\", \"Mango\"], after  reverse() : " + fruitsRev.reverse();
+        fruitsRev.sort();
+        fruitsRev.reverse();
+        document.getElementById("b1").innerHTML = "Berfore sort() and reverse() array = [\"Banana\", \"Orange\", \"Apple\", \"Mango\"], after sort() and reverse() : " + fruitsRev.join(" * ");
+    </script>
+
+    <h2>3- Array toSorted() function</h2>
+    <div>
+        <h3 style="color: blueviolet;">toSorted() method as a safe way to sort an array without altering the original
+            array. <br>
+            <br>
+            The difference between toSorted() and sort() is that the first method creates a new array, keeping the
+            original array unchanged,<br>
+            while the last method alters the original array.
+        </h3>
+        <p id="c1" ?></p>
+    </div>
+    <script>
+        const months = ["Jan", "Feb", "Mar", "Apr"];
+        const sorted = months.toSorted();
+        document.getElementById("c1").innerHTML = "Example of toSorted():   " + sorted;
+    </script>
+
+    <h2>4- Array toReversed() function</h2>
+    <div>
+        <h3 style="color: blueviolet;">the toReversed() method as a safe way to reverse an array without altering the
+            original array. <br>
+            <br>
+            The difference between toReversed() and reverse() is that the first method creates a new array, keeping the
+            original array unchanged,<br>
+            while the last method alters the original array.
+        </h3>
+    </div>
+    <p id="d1" />
+    <script>
+        const reversed = months.toReversed();
+        document.getElementById("d1").innerHTML = "Example of toSorted():  " + reversed;
+    </script>
+    <!-- ************************************************************** -->
+    <h1 style="color: blue;"> Type: 1 Numeric Sort</h1>
+    <h2>1- Numeric Sort function</h2>
+    <div>
+        <h3 style="color: blueviolet;">Note: <br>
+            a- the sort() function sorts values as strings.<br>
+            b-If numbers are sorted as strings, "25" is bigger than "100", because "2" is bigger than "1" </h3>
+        <h3 style="color:red">***Use compare function () to sort numbers:</h3>
+        <p id="sortComp1" />
+        <h3> Resone for 5 then 80 is: it is only comparing first number ignoring the rest of the digit.<br> To fix this
+            we need to pass a compare function inside the sort</h3>
+        <p id="sortComp2" />
+        <h3> We are passing a compare function num.sort(function(a,b){.... });</h3>
+        <p id="sortComp3" />
+        <h3> We can write the compare function inside sort() in short form.</h3>
+        <p id="sortComp4" />
+        <h3 style="color: red">Array descending order: reverse the trick</h3>
+        <p id="sortComp5" />
+        <p id="sortComp6" />
+    </div>
+    <script>
+        const numSort = [0, 1, 20, 30, 30, 80, 5];
+        document.getElementById("sortComp1").innerHTML = "Numbers array to sort: " + numSort;
+        document.getElementById("sortComp2").innerHTML = "Numbers array output of sort() :" + numSort.sort();
+        const sortCompare = numSort.sort(function (a, b) {
+            if (a > b) { // testing condition a =0 and b = 1, it failed 0 is not greated the 1
+                return 1;
+            }
+            if (a < b) { // 0 is less than 1 condition passed and it resulted 0 -1 = -1
+                return -1;
+            }
+            if (a == b) { // 30 and 30 are same .. condition passed 
+                return 0;
+            }
+        });
+        document.getElementById("sortComp3").innerHTML = "Numbers array output of sort(compare function) :" + sortCompare;
+
+        //****************************Short form************************
+        const shortForm = numSort.sort(function (a, b) { return a - b });
+        document.getElementById("sortComp4").innerHTML = "This function created with short form :" + shortForm;
+
+        //************************Array desecending order****************************
+        const descendingOrd = numSort.sort(function (a, b) {
+            if (b > a) {
+                return 1;
+            }
+            if (b < a) {
+                return -1;
+            }
+            if (b == a) {
+                return 0;
+            }
+        });
+        document.getElementById("sortComp5").innerHTML = "Comparing b with the a for array sort decending order :" + descendingOrd;
+    </script>
+    <h2>2- Random Sort function</h2>
+    <div>
+        <h3 style="color: blueviolet;">Sort an numeric array in random order</h3>
+
+        <button onclick="myRendomSortFunc()"> Try me ...</button>
+        <p id="srtRend1" />
+        <p id="srtRend" />
+    </div>
+    <script>
+        const sortRend = [40, 100, 1, 5, 25, 10];
+        document.getElementById("srtRend").innerHTML = "Before random():    " + sortRend;
+
+        function myRendomSortFunc() {
+            sortRend.sort(function () {
+                return 0.5 - Math.random() // math random returns a decimal and we are subtracting decimal .5 from that 
+            });
+            document.getElementById("srtRend1").innerHTML = sortRend;
+        }
+    </script>
+    <h3 style="color: red;"> XXX The Fisher Yates Method -- not understood </h3>
+
+    <h2>3- Math.min() function</h2>
+    <div>
+        <h3 style="color: blueviolet;">There are no built-in functions for finding the max or min value in an array.<br>
+            To find the lowest or highest value you have 3 options: <br>
+            <br>
+            * Sort the array and read the first or last element<br>
+            * Use Math.min() or Math.max()<br>
+            * Write a home made function
+        </h3>
+    </div>
+    <h3>3.1- Sort the array with sort() and read the first or last element for lowest and highest number </h3>
+    <div>
+        <h3 style="color: blueviolet;"></h3>
+        <p id="sortMin" />
+        <p id="sortMin1" />
+        <p id="sortMin2" />
+        <p id="sortMin3" />
+        <h4 style="color: red;"> <i>Other trick is we can sort the array on desecnding order and the highest num will be in index [0]. </i></h4>
+    </div>
+    <script>
+        const sortMinNum = [40, 100, 1, 5, 25, 10];
+        document.getElementById("sortMin").innerHTML = " Number before before sorting:  " + sortMinNum;
+
+        sortMinNum.sort(function (a, b) {
+            return a - b
+        });
+        document.getElementById("sortMin1").innerHTML = " Number After before sorting:  " + sortMinNum;
+        document.getElementById("sortMin2").innerHTML = " The lowest number in index [0] :  " + sortMinNum[0];
+        document.getElementById("sortMin3").innerHTML = " The highest number in X[X.lenght -1] :  " + sortMinNum[sortMinNum.length - 1];
+    </script>
+
+
+    <!-- ***************************************** -->
+    <h2>4- Math.max()function</h2>
+    <div>
+        <h3 style="color: blueviolet;"></h3>
+    </div>
+    <h3>4.1- Home made Max() function</h3>
+    <div>
+        <h3 style="color: blueviolet;"></h3>
+    </div>
+
+    <!-- ************************************************************** -->
+    <h3 style="color: brown;">Experiment with numerically and alphabetically sort()</h3>
+    <button onclick="myFunction1()">Sort Alphabetically</button>
+    <button onclick="myFunction2()">Sort Numerically</button>
+    <p id="demo"></p>
+    <script>
+        const points = [40, 100, 1, 5, 25, 10];
+        document.getElementById("demo").innerHTML = points;
+
+        function myFunction1() {
+            points.sort();
+            document.getElementById("demo").innerHTML = points;
+        }
+
+        function myFunction2() {
+            points.sort(function (a, b) { return a - b });
+            document.getElementById("demo").innerHTML = points;
+        }
+    </script>
+
+    <!-- ************************************************************** -->
+    <h1 style="color: blue;"> Sorting Objects function</h1>
+</body>
+
+</html>

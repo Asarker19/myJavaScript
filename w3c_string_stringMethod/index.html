@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1 style="color: blue;">JavaScript Strings</h1>
+
+<body>
+    <h3 style="color: rgb(0, 234, 255);">Notes</h3>
+    <p1>
+        <li style="color: red;">All string methods return a new string. They don't modify the original string.</li>
+        <li>1- Can use single or double quotes.<br></li>
+        <li>2- can use quotes inside a string, as long as they don't match the quotes surrounding the string:<br>
+            "It's alright"; <br>
+            "He is called 'Johnny'"; <br>
+            'He is called "Johnny"';
+        </li>
+        <h2 style="color: red;">String Length property</h2>
+        <p id="strLngProp" />
+        <p id="strLowCaseProp" />
+        <p id="strUppCaseProp" />
+
+        <h2 style="color: red;">Escape Character</h2>
+        <h3 style="color: rgb(0, 234, 255);">Notes</h3>
+        <p1>
+            <h3 style="color: blue;">The backslash (\) escape character turns special characters into string
+                characters:<br></h3>
+            <table>
+                <tr>
+                    <th style="color: red;">Code</th>
+                    <th style="color: red;">-----Result</th>
+                    <th style="color: red;">-----Description</th>
+                    <th style="color: red;">-----Example</th>
+                </tr>
+                <tr>
+                    <td>\'</td>
+                    <td>----- ' </td>
+                    <td>-----Single quote</td>
+                    <td>-----'It\'s alright.';</td>
+                </tr>
+                <tr>
+                    <td>\"</td>
+                    <td>----- " </td>
+                    <td>-----Double quote</td>
+                    <td>-----"We are the so-called \"Vikings\" from the north.";</td>
+                </tr>
+                <tr>
+                    <td>\\</td>
+                    <td>----- \ </td>
+                    <td>-----Backslash</td>
+
+                    <td>-----"The character \\ is called backslash."</td>
+                </tr>
+            </table>
+            <h3 style="color: blue;">Six other escape sequences</h3>
+            <li style="color: rgb(0, 234, 255);">Notes</li>
+            <h4>\b = Backspace</h4>
+            <h4>\f = Form Feed</h4>
+            <h4> \n =New Line</h4>
+            <p id="newLine"> Creaing newLine line: </p>
+            <h4>\r = Carriage Return</h4>
+            <h4>\t= Horizontal Tabulator</h4>
+            <h4>\v =Vertical Tabulator</h4>
+        </p1>
+
+        <h2 style="color: red;">JavaScript Strings as Objects</h2>
+        <h3 style="color: blue;">Notes</h3>
+        <li><b>JavaScript strings are primitive values, created from literals:<u style="color: blue;"> let x =
+                    "John";</u></b></li>
+        <li />
+        <li><b>But strings can also be defined as objects with the keyword new:<u style="color:  blue;">let y = new
+                    String("John");</u></b></li>
+        <p id="stringAsObj" />
+        <h4 style="color: rgb(16, 117, 7);">Never Create Strings as Objects</h4>
+        <p><b>Strings and objects cannot be safely compared</b></p>
+        <p id="dontCreateStrAsObj" />
+        <p id="dontCreateStrAsObj1" />
+        <p id="dontCreateStrAsObj2" />
+        <p style="color: rgb(16, 117, 7);"> **** JavaScript objects cannot be compared with type = = or ===.<br>
+            Comparing two JavaScript objects always returns false.</p>
+        <p id="dontCreateStrAsObj3" />
+        <p id="dontCreateStrAsObj4" />
+    </p1>
+    <li>*********************************************************************************************************************
+    </li>
+    <h1 style="color: brown;">*****************JavaScript String Methods*******************</h1>
+    <li>*********************************************************************************************************************
+    </li>
+    <p1>
+        <h2 style="color: blue;">1- String slice() --- Used for Extracting String Parts</h2>
+        <li><b> Syntax: slice(start, end)</b></li>
+        <li>slice() extracts a part of a string and returns the extracted part in a new string.<br>
+            The method takes 2 parameters: start position, and end position (end not included).
+        </li>
+        <p id="sliceStr" />
+        <p id="sliceStr1" />
+        <p id="sliceStr2" />
+    </p1>
+    <h2 style="color: blue;">2- String substring() --- Used for Extracting String Parts</h2>
+    <li>substring() is similar to slice().<br>
+        The difference is that start and end values less than 0 are treated as 0 in substring().
+    </li>
+    <br>
+    <li><b> Syntax: substring(start, end)</b></li>
+
+    <p1>
+        <h2 style="color: blue;">3- String substr() --- Used for Extracting String Parts</h2>
+        <li>substr() is similar to slice(). <br>
+            The difference is that the second parameter specifies the length of the extracted part.</li><br>
+        <li><b> Syntax: substr(start, end)</b></li>
+        <p id="subStr0" />
+        <li>If you omit the second parameter, substr() will slice out the rest of the string.</li><br>
+        <p id="subStr1" />
+    </p1>
+    <h2 style="color: blue;">4- String replace()</h2>
+    <p1>
+        <li>The replace() method replaces a specified value with another value in a string:</li>
+        <li style="color: blueviolet;">***The replace() method does not change the string it is called on.<br>
+            The replace() method returns a new string.<br>
+            The replace() method replaces only the first match<br>
+            If you want to replace all matches, use a regular expression with the /g flag set. See examples below.<br>
+            By default, the replace() method replaces only the first match:
+        </li>
+        <p id="strReplace" />
+        <li style="color:blueviolet">By default, the replace() method is case sensitive. Writing MICROSOFT (with
+            upper-case) will not work:</li>
+        <p id="strReplace1" />
+        <li style="color:blueviolet">To replace case insensitive, use a regular expression with an /i flag
+            (insensitive):</li>
+        <li style="color: red;">Regular expressions are written without quotes.</li>
+        <p id="strReplace2" />
+        <li style="color:blueviolet"> Global match</li>
+        <p id="strReplace3" />
+
+
+    </p1>
+    <h2 style="color: blue;">5- String replaceAll()</h2>
+    <p1>
+        <li>
+            The replaceAll() method allows you to specify a regular expression instead of a string to be replaced.<br>
+            If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.
+        </li>
+        <p id="replaceAll1" />
+        <p id="replaceAll" />
+    </p1>
+    <h2 style="color: blue;">6- String toUpperCase()</h2>
+    <li>Known</li>
+    <h2 style="color: blue;">7- String toLowerCase()</h2>
+    <li>Known</li>
+    <h2 style="color: blue;">8- String concat()</h2>
+    <p1>
+        <li>concat() joins two or more strings:</li>
+        <p id="strConcat" />
+        <p id="strConcat1" />
+    </p1>
+    <h2 style="color: blue;">9- String trim()</h2>
+    <p1>
+        <li style="color: blueviolet;">The trim() method removes whitespace from both sides of a string:</li>
+        <p id="strTrim1" />
+        <p id="strTrim" />
+    </p1>
+    <h2 style="color: blue;">10- String trimStart()</h2>
+    <li style="color: blueviolet;">The trimStart() method works like trim(), but removes whitespace only from the start
+        of a string.</li>
+    <h2 style="color: blue;">11- tring trimEnd()</h2>
+    <li style="color: blueviolet;">The trimEnd() method works like trim(), but removes whitespace only from the end of a
+        string.</li>
+    <h2 style="color: blue;">12- String padStart()</h2>
+    <p1>
+        <li style="color: blueviolet;">The padStart() method pads a string from the start.<br>
+            It pads a string with another string (multiple times) until it reaches a given length.
+        </li>
+        <p id="padStart" />
+        <p id="padStart1" />
+        <li style="color: blueviolet;">The padStart() method is a string method.<br>
+            To pad a number, convert the number to a string first.
+        </li>
+        <p id="padStart2" />
+    </p1>
+    <h2 style="color: blue;">13- String padEnd()</h2>
+    <li style="color: blueviolet;">The padEnd() method pads a string from the end.</li>
+    <h2 style="color: blue;">14- String charAt() -- methods for extracting string characters</h2>
+    <p1>
+        <li style="color: blueviolet;">The charAt() method returns the character at a specified index (position) in a
+            string:</li>
+        <p id="charAt0" />
+    </p1>
+    <h2 style="color: blue;">15- String charCodeAt() -- methods for extracting string characters</h2>
+    <p1>
+        <li style="color: blueviolet;">
+            The charCodeAt() method returns the unicode of the character at a specified index in a string:<br>
+            The method returns a UTF-16 code (an integer between 0 and 65535).
+        </li>
+        <p id="charCodeAt0" />
+    </p1>
+    <h2 style="color: blue;">15.1- Other method to extract Char is Property access [ ]-- methods for extracting string
+        characters</h2>
+    <p1>
+        <li style="color:blueviolet">
+            It makes strings look like arrays (but they are not)<br>
+            If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+        </li>
+        <p id="PropAccess" />
+    </p1>
+    <h2 style="color: blue;">16- String split() -- Converting a String to an Array</h2>
+    <p1>
+        <li style="color:blueviolet">A string can be converted to an array with the split() method: <br>
+            If the separator is omitted, the returned array will contain the whole string in index [0].<br>
+            If the separator is "", the returned array will be an array of single characters.<br>
+            text.split(",") // Split on commas <br>
+            text.split(" ") // Split on spaces <br>
+            text.split("|") // Split on pipe
+        </li>
+        <p id="strSpilt" />
+    </p1>
+</body>
+<script>
+    let text = "AbafsrassadsdaASASAEDA";
+    let longLine = "Very, Very, Helpful.  I don'\ t know how I missed this video.  \"Always\" something to learn within the Apple ecosystem. \
+    A very valuable product investment....";
+    let result = text.length;
+    let lowerCaseResult = text.toLowerCase();
+    let upperCaseResult = text.toUpperCase();
+    document.getElementById("strLngProp").innerHTML = "Example: used string length property to find the length: " + result;
+    document.getElementById("strLowCaseProp").innerHTML = "Example: used toLowerCase method to change : " + lowerCaseResult;
+    document.getElementById("strUppCaseProp").innerHTML = "Example: used toUpperCase method to change : " + upperCaseResult;
+    document.getElementById("newLine").innerHTML = "Example :" + longLine;
+    // String as Obj
+    let x = 'John';
+    let y = new String("John");
+    document.getElementById("stringAsObj").innerHTML = " x ='John' will return as: ****" + typeof x + ";-------------------------------" + " y = new String will return John as : ****" + typeof y;
+
+    // Do not created str as Obj
+    document.getElementById("dontCreateStrAsObj").innerHTML = "Comparing String and Obj with = = (type check) is retuning : ****" + (x == y);
+    document.getElementById("dontCreateStrAsObj1").innerHTML = "Comparing String and Obj with = = =(type and Value check) is retuning : ****" + (x === y);
+    // more String and Obj Comparision 
+    let a = 'John';
+    document.getElementById("dontCreateStrAsObj2").innerHTML = "Comparing String x='John' and a='John' String with = = (type check) is retuning : ****" + (x == a);
+    let b = new String("John");
+    document.getElementById("dontCreateStrAsObj3").innerHTML = "Comparing String y = new Str Obj 'John' and a= new Str Obj 'John' String with = = (type check) is retuning : ****" + (y == b);
+    document.getElementById("dontCreateStrAsObj4").innerHTML = "Comparing String y = new Str Obj 'John' and a= new Str Obj 'John' String with = = = (type check and value) is retuning : ****" + (y === b);
+    //********************************************************************************
+    // JavaScript String Methods
+    //********************************************************************************
+    //slice()
+    let sText = "Apple, Banana, Kiwi";
+    let part = sText.slice(6, 12); // 0 = Index 1 ....
+    let part1 = sText.slice(14, 18);
+    let part2 = sText.substr(14, 5);
+    let part3 = sText.substr(7);
+    document.getElementById("sliceStr").innerHTML = sText;
+    document.getElementById("sliceStr1").innerHTML = "Slice out a portion of a string Apple, Banana, Kiwi from position 6 to position 12 : " + part;
+    document.getElementById("sliceStr2").innerHTML = "Slice out of a portion from a string : " + part1;
+
+    // String substring()
+    document.getElementById("subStr0").innerHTML = "Slice out of a portion from a string with substr() : " + part2;
+    document.getElementById("subStr1").innerHTML = "substr() with one parameter : " + part3;
+
+    //String replace()
+    let strText = "Please visit Microsoft and Microsoft!";
+    let newStrText = strText.replace("MICROSOFT", "W3Schools");
+    let newStrText0 = "Please visit Microsoft!";
+    let newStrText1 = newStrText0.replace(/MICROSOFT/i, "W3Schools");
+    let glbMatchStr = strText.replace(/Microsoft/g, "W3Schools");
+    document.getElementById("strReplace").innerHTML = "Before the replace : " + strText;
+    document.getElementById("strReplace1").innerHTML = "After the replace : " + newStrText;
+    document.getElementById("strReplace2").innerHTML = "To make this case insensitive : " + newStrText1;
+    document.getElementById("strReplace2").innerHTML = "Global Match and replace : " + glbMatchStr;
+
+    //String ReplaceAll()
+    let repText = "I love cats. Cats are very easy to love. Cats are very popular.";
+    document.getElementById("replaceAll1").innerHTML = "Before Replace all : " + repText;
+    repText = repText.replaceAll("Cats", "Dogs");
+    repText = repText.replaceAll("cats", "dogs");
+    document.getElementById("replaceAll").innerHTML = " After Replace .. All: " + repText;
+
+    // String concat()
+    let strConcat1 = "Hello";
+    let strConcat2 = "World";
+    let conCatText = strConcat1.concat(" ", strConcat2);
+    document.getElementById("strConcat").innerHTML = " concat() : " + conCatText;
+
+    let concatText1 = "Hello".concat("", "World!");
+    document.getElementById("strConcat1").innerHTML = " direct concat() : " + concatText1;
+
+    // String trim() 
+    let trmText = "           Hello world !";
+    document.getElementById("strTrim1").innerHTML = "This is before removing the whitespace : " + trmText;
+    let trmTextRemove = trmText.trim();
+    document.getElementById("strTrim").innerHTML = "This is after removing the whitespace : " + trmTextRemove;
+
+    // String padStart() 
+    let padText = "5";
+    let padded1 = padText.padStart(4, "0");
+    let padded2 = padText.padStart(10, "x");
+    document.getElementById("padStart").innerHTML = "Pad a string with \"0\" until it reaches the length 4: " + padded1;
+    document.getElementById("padStart1").innerHTML = "Pad a string with \"x\" until it reaches the length 10: " + padded2;
+
+    let padNum = 5;
+    let padNumStr = padNum.toString();
+    let padNumStrResult = padNumStr.padStart(8, 0);
+    document.getElementById("padStart2").innerHTML = "Pad Number:  " + padNumStrResult;
+
+    //  charAt()
+    var charText = "Hello World!";
+    var charAtResult = charText.charAt(6);
+    document.getElementById("charAt0").innerHTML = "6 CHAR position on \"Hello World\" String is : " + charAtResult;
+
+    // String charCodeAt() 
+    let charAtCodeText = "Hello World!";
+    let charAtCodeTextResult = charAtCodeText.charCodeAt(6);
+    document.getElementById("charCodeAt0").innerHTML = "The unicode of the character at a 6 position in \"Hello World!\":  " + charAtCodeTextResult;
+
+    // Property Access 
+    document.getElementById("PropAccess").innerHTML = "The first character in the \"Hello World!\" string is: " + charAtCodeText[0];
+
+    // String split() 
+    let spltText = "a,b,c,d,e,f";
+    const myArray = spltText.split(",");
+    document.getElementById("strSpilt").innerHTML = "Display the first array element using comma , after a string split: " + myArray[0];
+
+
+</script>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Output</title>
+</head>
+
+<body>
+    <h1 style="color:blue">JavaScript Display Possibilities</h1>
+    <!-- XX-->
+    <div>
+        <h2 style="color:blueviolet">1- innerHTML: Writing into an HTML elemen</h2>
+        <p id="innerHTMLDemo" />
+    </div>
+    <script>
+        // .innerHTML
+        document.getElementById("innerHTMLDemo").innerHTML = "This is an example of .innerHTML : " + (5 + 6);        
+    </script>
+    <!-- XX-->
+    <div>
+        <h2 style="color:blueviolet">2- document.write(): Writing into the HTML output using document.write()</h2>
+        <p1>
+            <li>Using <b style="color: red;">document.write() </b>after an HTML document is loaded, will delete all
+                existing HTML:</li>
+        </p1>
+        <p>My first paragraph.</p>
+        <p>Never call document.write after the document has finished loading.<br>
+            It will overwrite the whole document.<br>
+            The document.write() method should only be used for testing.<br>
+            To test uncomment the Try it button.</p>
+        <!-- <button type="button" onclick="document.write(5 + 6)">Try it</button> -->
+
+        <!-- XX-->
+        <h2 style="color:blueviolet">3- window.alert(): Writing into an alert box</h2>
+        <li>In JavaScript, the window object is the global scope object. This means that variables,
+            properties, and methods by default belong to the window object. <br>
+            This also means that specifying the window keyword is optional:</li>
+        <script>
+            //window.alert("This is a Alert Box");
+            //alert("this is an alert.")
+        </script>
+        <!-- XX-->
+        <h2 style="color:blueviolet">4- console.log(): Writing into the browser console</h2>
+        <li>For debugging purposes, you can call the console.log() method in the browser to display data.</li>
+        <script>
+            console.log(5 + 6);
+        </script>
+<!-- XX-->
+<h2 style="color:red">5- window.print(): JavaScript does not have any print object or print methods.</h2>
+<li>The only exception is that you can call the window.print() method in the browser to print the content of the current window.</li>
+<button onclick="window.print()">Print this page</button>
+</body>
+
+</html>

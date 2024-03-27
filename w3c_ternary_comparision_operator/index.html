@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ternary also an comparision Operator</h1>
+    <h2>Like: if-then-else</h2>
+    <p><li>It takes 3 arguments.</li>
+        <li>Condition or expression ? if Value is ture return this : if value false return this.
+            <br/> Example: <b>x > y ? x : y;</b>
+            <br/> Condition is <b>x > y </b> [this is the if condition]
+            <br/>If this is true, get the value after the ? x [true then get x value ]
+            <br/> Else take the value after : [else take y value after colon] 
+            <br/> Where x = 11 and y =10.
+        </li></p> 
+        <p id ="demo"/>
+</body>
+<script>
+    let x = 11, y = 10;
+    let result= (x > y ? x :y);
+    document.getElementById("demo").innerHTML = "x > y ? x : y -- result of this is :" + result;
+
+</script>
+</html>

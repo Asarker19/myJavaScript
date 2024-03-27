@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>JavaScript Variables</h1>
+    <p> 1- Variable declaration with quote ...</p>
+    <p> We expected the sum of "5"+2+3 is 10 but </p>
+    <p> But if you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated.</p>
+    <p> The result of adding "5"+2+3 is: </p>
+    <p id="demo1" />
+    <p>********************************************************</p>
+
+    <p id="demo2" />
+
+    <p> 2- The dollar sign is treated as a letter in JavaScript names.</p>
+    <p id="demo3" />
+
+
+    <script>
+        let x = "5" + 2 + 3;
+        document.getElementById("demo1").innerHTML = x;
+
+        // $ sign
+        let $$$ = 2;
+        let $myMoney = 5;
+        document.getElementById("demo3").innerHTML = $$$ + $myMoney;
+
+        //
+    </script>
+
+</body>
+
+</html>

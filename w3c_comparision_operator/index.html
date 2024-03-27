@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Comparision Operators only returns true or false</h1>
+    <h2>1- Operator == , this only checks the types not the value returns true or false</h2>
+    <p> We are comparing x = 10 and Y ='10', an intiger with a string</p>
+    <p id="demo" />
+    <p id="demo1" />
+
+    <h2>2- Operator ===, this checkes value and the types and returns true or false</h2>
+    <p> We are comparing a = 10 and b ='10', an intiger with a string</p>
+    <p id="demo2" />
+
+    <h2>3- Operator != , this means not equal, it will return true or false</h2>
+    <p> Note: value is same so it returns false</p>
+    <p id="demo3" />
+
+    <h2>4- Operator !==, this means not equal to value and type, return true or false</h2>
+    <p> Note: value is same but type is different so it returns true</p>
+    <p id="demo4"/>
+
+    <h2>5- Operator < | > | <= | >=| these all return true or false and do not consider data types.</h2>
+    <p> Note: value is same but the type is different, it still compare and returns false</p>
+    <p id="demo5"/>
+
+</body>
+<script>
+    let x = 10;
+    let y = '10';
+    let result = x == y;
+    document.getElementById("demo1").innerHTML = "x = = y returns: " + x;
+    document.getElementById("demo").innerHTML = "Result = x = = y returns: " + result;
+
+    let a = 10;
+    let b = '10';
+    let result1 = a === b;
+    document.getElementById("demo2").innerHTML = "Result = a === b returns: " + result1;
+
+    let result2 = (a != b);
+    document.getElementById("demo3").innerHTML = "Result of comparing c = 10 and d ='10' with !=, it returns  : " + result2;
+   
+    let result3 = (a !== b);
+    document.getElementById("demo4").innerHTML = "Result of comparing c = 10 and d ='10' with !==, it returns  : " + result3;
+
+    let result4 = (a < b);
+    document.getElementById("demo5").innerHTML = "Result of comparing c = 10 and d ='10' with < than , it returns  : " + result4;
+
+</script>
+
+</html>
