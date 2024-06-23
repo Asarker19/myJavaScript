@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable scope etc</title>
+</head>
+
+<body>
+    <h1>Variable scope etc</h1>
+    <div id="scope">
+        <h2>Scope</h2>
+        <p>
+            <li>
+                Block scope: variable created between curly braces {}, it can't be accessed outside the end }.              
+            </li>
+            <li>
+                Function or local scope: Variable created in the function scope can't be accessed outside function.
+            </li>
+            <li>
+                Module: when a large script divide into mulitple files, each file called module. and one module can't access other modules variables.
+            </li>
+            <li>
+                Global: Variables and functions are declared at the top level of the script. 
+            </li>
+        </p>
+    </div>
+    <div id="constant">
+        <h2> Constant:  It defines a constant reference to a value</h2>
+        <p> When to use const:
+            <li>A new Arrary</li>
+            <li> A new Object</li>
+            <li>A new function</li>
+            <li>A new RegExp</li>
+        </p>
+        <p>
+            <h3> What is hoisting</h3>
+            Variables defined with var are hoisted to the top and can be initialized at any time.
+            Meaning: You can use the variable before it is declared:
+            <p>carName = "Volvo";</p>
+            <p>var carName;</p>
+        </p>
+        <p>
+            <h3>Constant Objects and Arrays</h3>
+            You can NOT:
+            <li>Reassign a constant value</li>
+            <li>Reassign a constant array</li>
+            <li>Reassign a constant object</li>
+            You can: 
+            <li>Change the elements of constant array</li>
+            <li>Change the properties of constant object</li>
+        </p>
+
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+
+<body id="mainPart">
+    <a href="index.html">Back to index page</a>
+    <h1>Event Handling</h1>
+
+    <h2>Click this button - Event Handling</h2>
+    <button type="button" onclick="displayMessage()">Event Handling button</button>
+    
+    <p></p>
+    <div>
+        <button type="button" onclick="makeGreen()" ondblclick="reverseColor()" id="greenButton">Change button to green</button>        
+    </div>
+    <p></p>
+    <div>
+        <button type="button" onclick="makeBlue()" ondblclick="reverseColor()" id="blueButton">Change button to blue</button>
+    </div>
+    <p></p>
+    <button type="button" onclick="makeAqua()" ondblclick="reverseColor()" >Make page colour Aqua</button>
+
+
+    <script>
+        function displayMessage() {
+            alert("This message will pop up when the user clicks the event handling button!");
+        }
+
+        function makeAqua(){
+            document.getElementById("mainPart").style.background ="aqua";
+        }
+
+        function makeGreen(){
+            document.getElementById("greenButton").style.background = "green";
+        }
+
+        function makeBlue(){
+            document.getElementById("blueButton").style.background= "blue";
+        }
+
+        function reverseColor(){
+            document.getElementById("greenButton").style.background = "white";
+            document.getElementById("blueButton").style.background = "white";
+            document.getElementById("mainPart").style.background = "white";
+        }
+    </script>
+</body>
+
+</html>
